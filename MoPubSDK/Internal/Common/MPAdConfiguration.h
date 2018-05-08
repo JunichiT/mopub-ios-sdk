@@ -17,50 +17,50 @@ enum {
 };
 typedef NSUInteger MPAdType;
 
-extern NSString * const kAdTypeHeaderKey;
-extern NSString * const kAdUnitWarmingUpHeaderKey;
-extern NSString * const kClickthroughHeaderKey;
-extern NSString * const kCreativeIdHeaderKey;
-extern NSString * const kCustomSelectorHeaderKey;
-extern NSString * const kCustomEventClassNameHeaderKey;
-extern NSString * const kCustomEventClassDataHeaderKey;
-extern NSString * const kFailUrlHeaderKey;
-extern NSString * const kHeightHeaderKey;
-extern NSString * const kImpressionTrackerHeaderKey;
-extern NSString * const kInterceptLinksHeaderKey;
-extern NSString * const kLaunchpageHeaderKey;
-extern NSString * const kNativeSDKParametersHeaderKey;
-extern NSString * const kNetworkTypeHeaderKey;
-extern NSString * const kRefreshTimeHeaderKey;
-extern NSString * const kAdTimeoutHeaderKey;
-extern NSString * const kScrollableHeaderKey;
-extern NSString * const kWidthHeaderKey;
-extern NSString * const kDspCreativeIdKey;
-extern NSString * const kPrecacheRequiredKey;
-extern NSString * const kIsVastVideoPlayerKey;
-extern NSString * const kRewardedVideoCurrencyNameHeaderKey;
-extern NSString * const kRewardedVideoCurrencyAmountHeaderKey;
-extern NSString * const kRewardedVideoCompletionUrlHeaderKey;
-extern NSString * const kRewardedCurrenciesHeaderKey;
-extern NSString * const kRewardedPlayableDurationHeaderKey;
-extern NSString * const kRewardedPlayableRewardOnClickHeaderKey;
+extern NSString * const kMPAdTypeHeaderKey;
+extern NSString * const kMPAdUnitWarmingUpHeaderKey;
+extern NSString * const kMPClickthroughHeaderKey;
+extern NSString * const kMPCreativeIdHeaderKey;
+extern NSString * const kMPCustomSelectorHeaderKey;
+extern NSString * const kMPCustomEventClassNameHeaderKey;
+extern NSString * const kMPCustomEventClassDataHeaderKey;
+extern NSString * const kMPFailUrlHeaderKey;
+extern NSString * const kMPHeightHeaderKey;
+extern NSString * const kMPImpressionTrackerHeaderKey;
+extern NSString * const kMPInterceptLinksHeaderKey;
+extern NSString * const kMPLaunchpageHeaderKey;
+extern NSString * const kMPNativeSDKParametersHeaderKey;
+extern NSString * const kMPNetworkTypeHeaderKey;
+extern NSString * const kMPRefreshTimeHeaderKey;
+extern NSString * const kMPAdTimeoutHeaderKey;
+extern NSString * const kMPScrollableHeaderKey;
+extern NSString * const kMPWidthHeaderKey;
+extern NSString * const kMPDspCreativeIdKey;
+extern NSString * const kMPPrecacheRequiredKey;
+extern NSString * const kMPIsVastVideoPlayerKey;
+extern NSString * const kMPRewardedVideoCurrencyNameHeaderKey;
+extern NSString * const kMPRewardedVideoCurrencyAmountHeaderKey;
+extern NSString * const kMPRewardedVideoCompletionUrlHeaderKey;
+extern NSString * const kMPRewardedCurrenciesHeaderKey;
+extern NSString * const kMPRewardedPlayableDurationHeaderKey;
+extern NSString * const kMPRewardedPlayableRewardOnClickHeaderKey;
 
-extern NSString * const kInterstitialAdTypeHeaderKey;
-extern NSString * const kOrientationTypeHeaderKey;
+extern NSString * const kMPInterstitialAdTypeHeaderKey;
+extern NSString * const kMPOrientationTypeHeaderKey;
 
-extern NSString * const kAdTypeHtml;
-extern NSString * const kAdTypeInterstitial;
-extern NSString * const kAdTypeMraid;
-extern NSString * const kAdTypeClear;
-extern NSString * const kAdTypeNative;
-extern NSString * const kAdTypeNativeVideo;
+extern NSString * const kMPAdTypeHtml;
+extern NSString * const kMPAdTypeInterstitial;
+extern NSString * const kMPAdTypeMraid;
+extern NSString * const kMPAdTypeClear;
+extern NSString * const kMPAdTypeNative;
+extern NSString * const kMPAdTypeNativeVideo;
 
-extern NSString * const kClickthroughExperimentBrowserAgent;
+extern NSString * const kMPClickthroughExperimentBrowserAgent;
 
-extern NSString * const kViewabilityDisableHeaderKey;
+extern NSString * const kMPViewabilityDisableHeaderKey;
 
-extern NSString * const kBannerImpressionVisableMsHeaderKey;
-extern NSString * const kBannerImpressionMinPixelHeaderKey;
+extern NSString * const kMPBannerImpressionVisableMsHeaderKey;
+extern NSString * const kMPBannerImpressionMinPixelHeaderKey;
 
 @interface MPAdConfiguration : NSObject
 

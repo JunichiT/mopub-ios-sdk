@@ -187,7 +187,7 @@
         return;
     }
 
-    if ([self.configuration.networkType isEqualToString:kAdTypeClear]) {
+    if ([self.configuration.networkType isEqualToString:kMPAdTypeClear]) {
         MPLogInfo(kMPClearErrorLogFormatWithAdUnitID, self.adUnitID);
         self.loading = NO;
         NSError *error = [NSError errorWithDomain:MoPubRewardedVideoAdsSDKDomain code:MPRewardedVideoAdErrorNoAdsAvailable userInfo:nil];

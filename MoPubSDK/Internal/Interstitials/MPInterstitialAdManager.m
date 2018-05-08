@@ -139,7 +139,7 @@
         return;
     }
 
-    if ([self.configuration.networkType isEqualToString:kAdTypeClear]) {
+    if ([self.configuration.networkType isEqualToString:kMPAdTypeClear]) {
         MPLogInfo(kMPClearErrorLogFormatWithAdUnitID, self.delegate.interstitialAdController.adUnitId);
         self.loading = NO;
         [self.delegate manager:self didFailToLoadInterstitialWithError:[MOPUBError errorWithCode:MOPUBErrorNoInventory]];

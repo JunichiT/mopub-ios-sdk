@@ -27,7 +27,7 @@
 
 - (void)testClickthroughExperimentInApp {
     [MOPUBExperimentProvider setDisplayAgentOverriddenByClientFlag:NO];
-    NSDictionary * headers = @{ kClickthroughExperimentBrowserAgent: @"0"};
+    NSDictionary * headers = @{ kMPClickthroughExperimentBrowserAgent: @"0"};
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
     XCTAssertEqual(config.clickthroughExperimentBrowserAgent, MOPUBDisplayAgentTypeInApp);
     XCTAssertEqual([MOPUBExperimentProvider displayAgentType], MOPUBDisplayAgentTypeInApp);
@@ -35,7 +35,7 @@
 
 - (void)testClickthroughExperimentNativeBrowser {
     [MOPUBExperimentProvider setDisplayAgentOverriddenByClientFlag:NO];
-    NSDictionary * headers = @{ kClickthroughExperimentBrowserAgent: @"1"};
+    NSDictionary * headers = @{ kMPClickthroughExperimentBrowserAgent: @"1"};
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
     XCTAssertEqual(config.clickthroughExperimentBrowserAgent, MOPUBDisplayAgentTypeNativeSafari);
     XCTAssertEqual([MOPUBExperimentProvider displayAgentType], MOPUBDisplayAgentTypeNativeSafari);
@@ -43,7 +43,7 @@
 
 - (void)testClickthroughExperimentSafariViewController {
     [MOPUBExperimentProvider setDisplayAgentOverriddenByClientFlag:NO];
-    NSDictionary * headers = @{ kClickthroughExperimentBrowserAgent: @"2"};
+    NSDictionary * headers = @{ kMPClickthroughExperimentBrowserAgent: @"2"};
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
     XCTAssertEqual(config.clickthroughExperimentBrowserAgent, MOPUBDisplayAgentTypeSafariViewController);
     XCTAssertEqual([MOPUBExperimentProvider displayAgentType], MOPUBDisplayAgentTypeSafariViewController);
@@ -52,7 +52,7 @@
 - (void)testClickthroughClientOverride {
     [[MoPub sharedInstance] setClickthroughDisplayAgentType:MOPUBDisplayAgentTypeInApp];
 
-    NSDictionary * headers = @{ kClickthroughExperimentBrowserAgent: @"2"};
+    NSDictionary * headers = @{ kMPClickthroughExperimentBrowserAgent: @"2"};
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
     XCTAssertEqual(config.clickthroughExperimentBrowserAgent, MOPUBDisplayAgentTypeSafariViewController);
 

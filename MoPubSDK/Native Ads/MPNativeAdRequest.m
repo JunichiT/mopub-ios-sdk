@@ -236,7 +236,7 @@
         return;
     }
 
-    if ([configuration.networkType isEqualToString:kAdTypeClear]) {
+    if ([configuration.networkType isEqualToString:kMPAdTypeClear]) {
         MPLogInfo(kMPClearErrorLogFormatWithAdUnitID, self.adUnitIdentifier);
         [self completeAdRequestWithAdObject:nil error:MPNativeAdNSErrorForNoInventory()];
         return;

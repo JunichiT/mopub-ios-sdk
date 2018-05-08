@@ -20,9 +20,9 @@
 + (NSMutableDictionary *)defaultNativeAdHeaders
 {
     return [@{
-              kAdTypeHeaderKey: kAdTypeNative,
-              kFailUrlHeaderKey: @"http://ads.mopub.com/m/failURL",
-              kRefreshTimeHeaderKey: @"61",
+              kMPAdTypeHeaderKey: kMPAdTypeNative,
+              kMPFailUrlHeaderKey: @"http://ads.mopub.com/m/failURL",
+              kMPRefreshTimeHeaderKey: @"61",
               } mutableCopy];
 }
 
@@ -46,15 +46,15 @@
 
 + (MPAdConfiguration *)defaultNativeAdConfigurationWithNetworkType:(NSString *)type
 {
-    return [self defaultNativeAdConfigurationWithHeaders:@{kAdTypeHeaderKey: type}
+    return [self defaultNativeAdConfigurationWithHeaders:@{kMPAdTypeHeaderKey: type}
                                               properties:nil];
 }
 
 + (MPAdConfiguration *)defaultNativeAdConfigurationWithCustomEventClassName:(NSString *)eventClassName
 {
     return [MPAdConfigurationFactory defaultNativeAdConfigurationWithHeaders:@{
-                                                                               kCustomEventClassNameHeaderKey: eventClassName,
-                                                                               kAdTypeHeaderKey: @"custom"}
+                                                                               kMPCustomEventClassNameHeaderKey: eventClassName,
+                                                                               kMPAdTypeHeaderKey: @"custom"}
                                                                   properties:nil];
 }
 
@@ -78,15 +78,15 @@
 + (NSMutableDictionary *)defaultBannerHeaders
 {
     return [@{
-              kAdTypeHeaderKey: kAdTypeHtml,
-              kClickthroughHeaderKey: @"http://ads.mopub.com/m/clickThroughTracker?a=1",
-              kFailUrlHeaderKey: @"http://ads.mopub.com/m/failURL",
-              kHeightHeaderKey: @"50",
-              kImpressionTrackerHeaderKey: @"http://ads.mopub.com/m/impressionTracker",
-              kInterceptLinksHeaderKey: @"1",
-              kLaunchpageHeaderKey: @"http://publisher.com",
-              kRefreshTimeHeaderKey: @"30",
-              kWidthHeaderKey: @"320"
+              kMPAdTypeHeaderKey: kMPAdTypeHtml,
+              kMPClickthroughHeaderKey: @"http://ads.mopub.com/m/clickThroughTracker?a=1",
+              kMPFailUrlHeaderKey: @"http://ads.mopub.com/m/failURL",
+              kMPHeightHeaderKey: @"50",
+              kMPImpressionTrackerHeaderKey: @"http://ads.mopub.com/m/impressionTracker",
+              kMPInterceptLinksHeaderKey: @"1",
+              kMPLaunchpageHeaderKey: @"http://publisher.com",
+              kMPRefreshTimeHeaderKey: @"30",
+              kMPWidthHeaderKey: @"320"
               } mutableCopy];
 }
 
@@ -97,15 +97,15 @@
 
 + (MPAdConfiguration *)defaultBannerConfigurationWithNetworkType:(NSString *)type
 {
-    return [self defaultBannerConfigurationWithHeaders:@{kAdTypeHeaderKey: type}
+    return [self defaultBannerConfigurationWithHeaders:@{kMPAdTypeHeaderKey: type}
                                             HTMLString:nil];
 }
 
 + (MPAdConfiguration *)defaultBannerConfigurationWithCustomEventClassName:(NSString *)eventClassName
 {
     return [MPAdConfigurationFactory defaultBannerConfigurationWithHeaders:@{
-                                                                             kCustomEventClassNameHeaderKey: eventClassName,
-                                                                             kAdTypeHeaderKey: @"custom"}
+                                                                             kMPCustomEventClassNameHeaderKey: eventClassName,
+                                                                             kMPAdTypeHeaderKey: @"custom"}
                                                                 HTMLString:nil];
 }
 
@@ -127,14 +127,14 @@
 + (NSMutableDictionary *)defaultInterstitialHeaders
 {
     return [@{
-              kAdTypeHeaderKey: kAdTypeInterstitial,
-              kClickthroughHeaderKey: @"http://ads.mopub.com/m/clickThroughTracker?a=1",
-              kFailUrlHeaderKey: @"http://ads.mopub.com/m/failURL",
-              kImpressionTrackerHeaderKey: @"http://ads.mopub.com/m/impressionTracker",
-              kInterceptLinksHeaderKey: @"1",
-              kLaunchpageHeaderKey: @"http://publisher.com",
-              kInterstitialAdTypeHeaderKey: kAdTypeHtml,
-              kOrientationTypeHeaderKey: @"p"
+              kMPAdTypeHeaderKey: kMPAdTypeInterstitial,
+              kMPClickthroughHeaderKey: @"http://ads.mopub.com/m/clickThroughTracker?a=1",
+              kMPFailUrlHeaderKey: @"http://ads.mopub.com/m/failURL",
+              kMPImpressionTrackerHeaderKey: @"http://ads.mopub.com/m/impressionTracker",
+              kMPInterceptLinksHeaderKey: @"1",
+              kMPLaunchpageHeaderKey: @"http://publisher.com",
+              kMPInterstitialAdTypeHeaderKey: kMPAdTypeHtml,
+              kMPOrientationTypeHeaderKey: @"p"
               } mutableCopy];
 }
 
@@ -146,8 +146,8 @@
 + (MPAdConfiguration *)defaultMRAIDInterstitialConfiguration
 {
     NSDictionary *headers = @{
-                              kAdTypeHeaderKey: @"mraid",
-                              kOrientationTypeHeaderKey: @"p"
+                              kMPAdTypeHeaderKey: @"mraid",
+                              kMPOrientationTypeHeaderKey: @"p"
                               };
 
     return [self defaultInterstitialConfigurationWithHeaders:headers
@@ -175,15 +175,15 @@
 
 + (MPAdConfiguration *)defaultInterstitialConfigurationWithNetworkType:(NSString *)type
 {
-    return [self defaultInterstitialConfigurationWithHeaders:@{kInterstitialAdTypeHeaderKey: type}
+    return [self defaultInterstitialConfigurationWithHeaders:@{kMPInterstitialAdTypeHeaderKey: type}
                                                   HTMLString:nil];
 }
 
 + (MPAdConfiguration *)defaultInterstitialConfigurationWithCustomEventClassName:(NSString *)eventClassName
 {
     return [MPAdConfigurationFactory defaultInterstitialConfigurationWithHeaders:@{
-                                                                                   kCustomEventClassNameHeaderKey: eventClassName,
-                                                                                   kInterstitialAdTypeHeaderKey: @"custom"}
+                                                                                   kMPCustomEventClassNameHeaderKey: eventClassName,
+                                                                                   kMPInterstitialAdTypeHeaderKey: @"custom"}
                                                                       HTMLString:nil];
 }
 
@@ -203,28 +203,28 @@
 + (NSMutableDictionary *)defaultRewardedVideoHeaders
 {
     return [@{
-              kAdTypeHeaderKey: @"custom",
-              kClickthroughHeaderKey: @"http://ads.mopub.com/m/clickThroughTracker?a=1",
-              kFailUrlHeaderKey: @"http://ads.mopub.com/m/failURL",
-              kImpressionTrackerHeaderKey: @"http://ads.mopub.com/m/impressionTracker",
-              kInterceptLinksHeaderKey: @"1",
-              kLaunchpageHeaderKey: @"http://publisher.com",
-              kInterstitialAdTypeHeaderKey: kAdTypeHtml,
+              kMPAdTypeHeaderKey: @"custom",
+              kMPClickthroughHeaderKey: @"http://ads.mopub.com/m/clickThroughTracker?a=1",
+              kMPFailUrlHeaderKey: @"http://ads.mopub.com/m/failURL",
+              kMPImpressionTrackerHeaderKey: @"http://ads.mopub.com/m/impressionTracker",
+              kMPInterceptLinksHeaderKey: @"1",
+              kMPLaunchpageHeaderKey: @"http://publisher.com",
+              kMPInterstitialAdTypeHeaderKey: kMPAdTypeHtml,
               } mutableCopy];
 }
 
 + (NSMutableDictionary *)defaultRewardedVideoHeadersWithReward
 {
     NSMutableDictionary *dict = [[self defaultRewardedVideoHeaders] mutableCopy];
-    dict[kRewardedVideoCurrencyNameHeaderKey] = @"gold";
-    dict[kRewardedVideoCurrencyAmountHeaderKey] = @"12";
+    dict[kMPRewardedVideoCurrencyNameHeaderKey] = @"gold";
+    dict[kMPRewardedVideoCurrencyAmountHeaderKey] = @"12";
     return dict;
 }
 
 + (NSMutableDictionary *)defaultRewardedVideoHeadersServerToServer
 {
     NSMutableDictionary *dict = [[self defaultRewardedVideoHeaders] mutableCopy];
-    dict[kRewardedVideoCompletionUrlHeaderKey] = @"http://ads.mopub.com/m/rewarded_video_completion?req=332dbe5798d644309d9d950321d37e3c&reqt=1460590468.0&id=54c94899972a4d4fb00c9cbf0fd08141&cid=303d4529ee3b42e7ac1f5c19caf73515&udid=ifa%3A3E67D059-6F94-4C88-AD2A-72539FE13795&cppck=09CCC";
+    dict[kMPRewardedVideoCompletionUrlHeaderKey] = @"http://ads.mopub.com/m/rewarded_video_completion?req=332dbe5798d644309d9d950321d37e3c&reqt=1460590468.0&id=54c94899972a4d4fb00c9cbf0fd08141&cid=303d4529ee3b42e7ac1f5c19caf73515&udid=ifa%3A3E67D059-6F94-4C88-AD2A-72539FE13795&cppck=09CCC";
     return dict;
 }
 

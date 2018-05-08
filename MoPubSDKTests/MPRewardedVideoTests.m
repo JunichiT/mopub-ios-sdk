@@ -46,8 +46,8 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
 
 - (void)testRewardedSingleCurrencyPresentationSuccess {
     // Setup rewarded ad configuration
-    NSDictionary * headers = @{ kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
+    NSDictionary * headers = @{ kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
                                 };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -79,7 +79,7 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     //     { "name": "Coins", "amount": 8 }
     //   ]
     // }
-    NSDictionary * headers = @{ kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 } ] }" };
+    NSDictionary * headers = @{ kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 } ] }" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     // Semaphore to wait for asynchronous method to finish before continuing the test.
@@ -110,8 +110,8 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     //     { "name": "Coins", "amount": 8 }
     //   ]
     // }
-    NSDictionary * headers = @{ kRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
-                                kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 } ] }"
+    NSDictionary * headers = @{ kMPRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
+                                kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 } ] }"
                               };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -156,7 +156,7 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     //     { "name": "Energy", "amount": 20 }
     //   ]
     // }
-    NSDictionary * headers = @{ kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }" };
+    NSDictionary * headers = @{ kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     // Semaphore to wait for asynchronous method to finish before continuing the test.
@@ -190,7 +190,7 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     //     { "name": "Energy", "amount": 20 }
     //   ]
     // }
-    NSDictionary * headers = @{ kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }" };
+    NSDictionary * headers = @{ kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     // Semaphore to wait for asynchronous method to finish before continuing the test.
@@ -230,7 +230,7 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     //     { "name": "Energy", "amount": 20 }
     //   ]
     // }
-    NSDictionary * headers = @{ kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }" };
+    NSDictionary * headers = @{ kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     // Semaphore to wait for asynchronous method to finish before continuing the test.
@@ -270,7 +270,7 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     //     { "name": "Energy", "amount": 20 }
     //   ]
     // }
-    NSDictionary * headers = @{ kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }" };
+    NSDictionary * headers = @{ kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     // Semaphore to wait for asynchronous method to finish before continuing the test.
@@ -313,8 +313,8 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     //     { "name": "Energy", "amount": 20 }
     //   ]
     // }
-    NSDictionary * headers = @{ kRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
-                                kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }"
+    NSDictionary * headers = @{ kMPRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
+                                kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }"
                               };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -351,7 +351,7 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
 }
 
 - (void)testRewardedS2SNoRewardSpecified {
-    NSDictionary * headers = @{ kRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
+    NSDictionary * headers = @{ kMPRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
                                 };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -439,9 +439,9 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     NSString * customData = [@"" stringByPaddingToLength:512 withString:@"test" startingAtIndex:0];
 
     // Setup rewarded ad configuration
-    NSDictionary * headers = @{ kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
-                                kRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
+    NSDictionary * headers = @{ kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
+                                kMPRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
                                 };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -474,9 +474,9 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     NSString * customData = [@"" stringByPaddingToLength:8200 withString:@"test" startingAtIndex:0];
 
     // Setup rewarded ad configuration
-    NSDictionary * headers = @{ kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
-                                kRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
+    NSDictionary * headers = @{ kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
+                                kMPRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
                               };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -506,9 +506,9 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
 
 - (void)testCustomDataNil {
     // Setup rewarded ad configuration
-    NSDictionary * headers = @{ kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
-                                kRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
+    NSDictionary * headers = @{ kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
+                                kMPRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
                                 };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -536,9 +536,9 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
 
 - (void)testCustomDataEmpty {
     // Setup rewarded ad configuration
-    NSDictionary * headers = @{ kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
-                                kRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
+    NSDictionary * headers = @{ kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
+                                kMPRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
                                 };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -569,9 +569,9 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     NSString * customData = @"{ \"key\": \"some value with spaces\" }";
 
     // Setup rewarded ad configuration
-    NSDictionary * headers = @{ kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
-                                kRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
+    NSDictionary * headers = @{ kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
+                                kMPRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
                                 };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -605,8 +605,8 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
     NSString * customData = [@"" stringByPaddingToLength:512 withString:@"test" startingAtIndex:0];
 
     // Setup rewarded ad configuration
-    NSDictionary * headers = @{ kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
+    NSDictionary * headers = @{ kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
                                 };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -645,10 +645,10 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
 
 - (void)testNetworkIdentifierInRewardCallback {
     // Setup rewarded ad configuration
-    NSDictionary * headers = @{ kCustomEventClassNameHeaderKey: @"MPMockChartboostRewardedVideoCustomEvent",
-                                kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
-                                kRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
+    NSDictionary * headers = @{ kMPCustomEventClassNameHeaderKey: @"MPMockChartboostRewardedVideoCustomEvent",
+                                kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
+                                kMPRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
                                 };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -676,11 +676,11 @@ static MPRewardedVideoDelegateHandler * delegateHandler = nil;
 
 - (void)testMoPubNetworkIdentifierInRewardCallback {
     // Setup rewarded ad configuration
-    NSDictionary * headers = @{ kAdTypeHeaderKey: @"rewarded_video",
-                                kCustomEventClassNameHeaderKey: @"rewarded_video",
-                                kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
-                                kRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
+    NSDictionary * headers = @{ kMPAdTypeHeaderKey: @"rewarded_video",
+                                kMPCustomEventClassNameHeaderKey: @"rewarded_video",
+                                kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
+                                kMPRewardedVideoCompletionUrlHeaderKey: @"https://test.com?verifier=123",
                                 };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 

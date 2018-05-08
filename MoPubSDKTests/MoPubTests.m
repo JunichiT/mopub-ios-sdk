@@ -136,9 +136,9 @@ static NSTimeInterval const kTestTimeout = 2;
     [MoPub sharedInstance].forceWKWebView = NO;
 
     // Verify that UIWebView was used instead of WKWebView for video ads
-    NSDictionary * headers = @{ kAdTypeHeaderKey: @"rewarded_video",
-                                kIsVastVideoPlayerKey: @(1),
-                                kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }"
+    NSDictionary * headers = @{ kMPAdTypeHeaderKey: @"rewarded_video",
+                                kMPIsVastVideoPlayerKey: @(1),
+                                kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }"
                                 };
 
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
@@ -155,9 +155,9 @@ static NSTimeInterval const kTestTimeout = 2;
     [MoPub sharedInstance].forceWKWebView = YES;
 
     // Verify that WKWebView was used instead of UIWebView for video ads
-    NSDictionary * headers = @{ kAdTypeHeaderKey: @"rewarded_video",
-                                kIsVastVideoPlayerKey: @(1),
-                                kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }"
+    NSDictionary * headers = @{ kMPAdTypeHeaderKey: @"rewarded_video",
+                                kMPIsVastVideoPlayerKey: @(1),
+                                kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }"
                                 };
 
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];

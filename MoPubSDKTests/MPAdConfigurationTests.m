@@ -28,7 +28,7 @@
 #pragma mark - Rewarded Ads
 
 - (void)testRewardedPlayableDurationParseSuccess {
-    NSDictionary * headers = @{ kRewardedPlayableDurationHeaderKey: @"30" };
+    NSDictionary * headers = @{ kMPRewardedPlayableDurationHeaderKey: @"30" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertEqual(config.rewardedPlayableDuration, 30);
@@ -42,7 +42,7 @@
 }
 
 - (void)testRewardedPlayableRewardOnClickParseSuccess {
-    NSDictionary * headers = @{ kRewardedPlayableRewardOnClickHeaderKey: @"true" };
+    NSDictionary * headers = @{ kMPRewardedPlayableRewardOnClickHeaderKey: @"true" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertEqual(config.rewardedPlayableShouldRewardOnClick, true);
@@ -56,8 +56,8 @@
 }
 
 - (void)testRewardedSingleCurrencyParseSuccess {
-    NSDictionary * headers = @{ kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
+    NSDictionary * headers = @{ kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
                                };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -77,7 +77,7 @@
     //     { "name": "Energy", "amount": 20 }
     //   ]
     // }
-    NSDictionary * headers = @{ kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }" };
+    NSDictionary * headers = @{ kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"name\": \"Coins\", \"amount\": 8 }, { \"name\": \"Diamonds\", \"amount\": 1 }, { \"name\": \"Energy\", \"amount\": 20 } ] }" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertNotNil(config.availableRewards);
@@ -92,7 +92,7 @@
     // {
     //   "rewards": []
     // }
-    NSDictionary * headers = @{ kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [] }" };
+    NSDictionary * headers = @{ kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [] }" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertNotNil(config.availableRewards);
@@ -107,7 +107,7 @@
     // {
     //   "rewards": [ { "n": "Coins", "a": 8 } ]
     // }
-    NSDictionary * headers = @{ kRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"n\": \"Coins\", \"a\": 8 } ] }" };
+    NSDictionary * headers = @{ kMPRewardedCurrenciesHeaderKey: @"{ \"rewards\": [ { \"n\": \"Coins\", \"a\": 8 } ] }" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertNotNil(config.availableRewards);
@@ -119,9 +119,9 @@
 }
 
 - (void)testRewardedMultiCurrencyParseFailoverToSingleCurrencySuccess {
-    NSDictionary * headers = @{ kRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
-                                kRewardedVideoCurrencyAmountHeaderKey: @"3",
-                                kRewardedCurrenciesHeaderKey: @"{ }"
+    NSDictionary * headers = @{ kMPRewardedVideoCurrencyNameHeaderKey: @"Diamonds",
+                                kMPRewardedVideoCurrencyAmountHeaderKey: @"3",
+                                kMPRewardedCurrenciesHeaderKey: @"{ }"
                                 };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
@@ -165,21 +165,21 @@
 }
 
 - (void)testClickthroughExperimentInApp {
-    NSDictionary * headers = @{ kClickthroughExperimentBrowserAgent: @"0"};
+    NSDictionary * headers = @{ kMPClickthroughExperimentBrowserAgent: @"0"};
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
     XCTAssertEqual(config.clickthroughExperimentBrowserAgent, MOPUBDisplayAgentTypeInApp);
     XCTAssertEqual([MOPUBExperimentProvider displayAgentType], MOPUBDisplayAgentTypeInApp);
 }
 
 - (void)testClickthroughExperimentNativeBrowser {
-    NSDictionary * headers = @{ kClickthroughExperimentBrowserAgent: @"1"};
+    NSDictionary * headers = @{ kMPClickthroughExperimentBrowserAgent: @"1"};
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
     XCTAssertEqual(config.clickthroughExperimentBrowserAgent, MOPUBDisplayAgentTypeNativeSafari);
     XCTAssertEqual([MOPUBExperimentProvider displayAgentType], MOPUBDisplayAgentTypeNativeSafari);
 }
 
 - (void)testClickthroughExperimentSafariViewController {
-    NSDictionary * headers = @{ kClickthroughExperimentBrowserAgent: @"2"};
+    NSDictionary * headers = @{ kMPClickthroughExperimentBrowserAgent: @"2"};
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
     XCTAssertEqual(config.clickthroughExperimentBrowserAgent, MOPUBDisplayAgentTypeSafariViewController);
     XCTAssertEqual([MOPUBExperimentProvider displayAgentType], MOPUBDisplayAgentTypeSafariViewController);
@@ -194,7 +194,7 @@
     // {
     //   "X-Disable-Viewability": 3
     // }
-    NSDictionary * headers = @{ kViewabilityDisableHeaderKey: @"3" };
+    NSDictionary * headers = @{ kMPViewabilityDisableHeaderKey: @"3" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertNotNil(config);
@@ -210,7 +210,7 @@
     // {
     //   "X-Disable-Viewability": 0
     // }
-    NSDictionary * headers = @{ kViewabilityDisableHeaderKey: @"0" };
+    NSDictionary * headers = @{ kMPViewabilityDisableHeaderKey: @"0" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertNotNil(config);
@@ -226,7 +226,7 @@
     // {
     //   "X-Disable-Viewability": 3
     // }
-    NSDictionary * headers = @{ kViewabilityDisableHeaderKey: @"3" };
+    NSDictionary * headers = @{ kMPViewabilityDisableHeaderKey: @"3" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertNotNil(config);
@@ -241,7 +241,7 @@
     // {
     //   "X-Disable-Viewability": 0
     // }
-    headers = @{ kViewabilityDisableHeaderKey: @"0" };
+    headers = @{ kMPViewabilityDisableHeaderKey: @"0" };
     config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertNotNil(config);
@@ -257,7 +257,7 @@
     // {
     //   "X-Disable-Viewability": 3aaaa
     // }
-    NSDictionary * headers = @{ kViewabilityDisableHeaderKey: @"3aaaa" };
+    NSDictionary * headers = @{ kMPViewabilityDisableHeaderKey: @"3aaaa" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertNotNil(config);
@@ -273,7 +273,7 @@
     // {
     //   "X-Disable-Viewability": ""
     // }
-    NSDictionary * headers = @{ kViewabilityDisableHeaderKey: @"" };
+    NSDictionary * headers = @{ kMPViewabilityDisableHeaderKey: @"" };
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
 
     XCTAssertNotNil(config);
@@ -329,14 +329,14 @@
 #pragma mark - Banner Impression Headers
 
 - (void)testVisibleImpressionHeader {
-    NSDictionary * headers = @{ kBannerImpressionVisableMsHeaderKey: @"0", kBannerImpressionMinPixelHeaderKey:@"1"};
+    NSDictionary * headers = @{ kMPBannerImpressionVisableMsHeaderKey: @"0", kMPBannerImpressionMinPixelHeaderKey:@"1"};
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
     XCTAssertEqual(config.impressionMinVisiblePixels, 1);
     XCTAssertEqual(config.impressionMinVisibleTimeInSec, 0);
 }
 
 - (void)testVisibleImpressionEnabled {
-    NSDictionary * headers = @{ kBannerImpressionVisableMsHeaderKey: @"0", kBannerImpressionMinPixelHeaderKey:@"1"};
+    NSDictionary * headers = @{ kMPBannerImpressionVisableMsHeaderKey: @"0", kMPBannerImpressionMinPixelHeaderKey:@"1"};
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
     XCTAssertTrue(config.visibleImpressionTrackingEnabled);
 }
@@ -348,7 +348,7 @@
 }
 
 - (void)testVisibleImpressionNotEnabled {
-    NSDictionary * headers = @{kBannerImpressionVisableMsHeaderKey: @"0", kBannerImpressionMinPixelHeaderKey:@"0"};
+    NSDictionary * headers = @{kMPBannerImpressionVisableMsHeaderKey: @"0", kMPBannerImpressionMinPixelHeaderKey:@"0"};
     MPAdConfiguration * config = [[MPAdConfiguration alloc] initWithHeaders:headers data:nil];
     XCTAssertFalse(config.visibleImpressionTrackingEnabled);
 }

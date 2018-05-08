@@ -223,7 +223,7 @@
         return;
     }
 
-    if ([configuration.networkType isEqualToString:kAdTypeClear]) {
+    if ([configuration.networkType isEqualToString:kMPAdTypeClear]) {
         MPLogInfo(kMPClearErrorLogFormatWithAdUnitID, self.delegate.adUnitId);
         [self didFailToLoadAdapterWithError:[MOPUBError errorWithCode:MOPUBErrorNoInventory]];
         return;
